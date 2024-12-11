@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="evento.css">
+    <title>Calendario con Eventos</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Calendario</h1>
+        <div id="calendar">
+            <div v-for="day in days" :key="day" class="day" @click="selectDay(day)">
+                {{ day }}
+            </div>
+        </div>
+        <input type="text" v-model="newEvent" placeholder="Agregar evento">
+        <button @click="addEvent">Agregar</button>
+        <button @click="removeEvent">Eliminar</button>
+        <ul>
+            <li v-for="event in events" :key="event.day + event.event">
+                Día {{ event.day }}: {{ event.event }}
+            </li>
+        </ul>
+    </div>
+    <footer><span>Version 1.0</span></footer>
+    
+    <script src="vue.js"></script>
+    <script src="evento.js"></script>
+</body>
+</html>

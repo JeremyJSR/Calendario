@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+.day {
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+.day:hover {
+    background-color: #e0e0e0;
+}
