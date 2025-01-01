@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/eventos.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container" id="app">
+        <header>
+            <div class="user"><p>Tipo de Cuenta: {{ tipoCuenta }} </p></div>
+
+            <div class="registro">
+                <div>
+                    <label for="usuario"> Usuario:</label>
+                    <input type="text" v-model="nombre" id="usuario">
+                </div>
+                <div>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" v-model="contrasena" id="contrasena">
+                </div>
+                <button type="submit" @click="acceder">Acceder</button>
+            </div>
+        </header>
+        <main>
+            <div v-if="tipoCuenta === 'administrador'" class="admin-section">
+                <h2>Agregar Evento</h2>
+                <div class="medio">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" v-model="nuevoEvento.fecha" id="fecha">
+                </div>
+                <div class="medio">
+                    <label for="evento">Evento:</label>
+                    <input type="text" v-model="nuevoEvento.evento" id="evento">
+                </div>
+                <div class="medio">
+                    <label for="establecimiento">Establecimiento:</label>
+                    <input type="text" v-model="nuevoEvento.establecimiento" id="establecimiento">
+                </div>
+                <div class="medio">
+                    <label for="domicilio">Domicilio:</label>
+                    <input type="text" v-model="nuevoEvento.domicilio" id="domicilio">
+                </div>
+                <div class="largo">
+                    <label for="contenido">Contenido:</label>
+                    <input type="text" v-model="nuevoEvento.contenido" id="contenido">
+                </div>
+                <button @click="agregarEvento">Agregar Evento</button>
+            </div>
+        
+            <h2>Calendario 2025</h2>
+            <div class="calendario-container">
+                <div v-for="mes in calendario" :key="mes.mes" class="mes">
+                    <h3>{{ mes.nombre }}</h3>
+                    <ul>
+                        <li v-for="dia in mes.dias" :key="dia.fecha" :class="{ evento: dia.evento }">
+                            {{ dia.dia }} - {{ dia.evento || 'Sin evento' }}
+                            <p v-if="dia.evento">{{ dia.establecimiento }} - {{ dia.domicilio }} - {{ dia.contenido }}</p>
+                            <button v-if="tipoCuenta === 'administrador' && dia.evento" @click="eliminarEvento(dia.fecha)">Eliminar Evento</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>        
+        
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/eventos.js"></script>
+</body>
+</html>

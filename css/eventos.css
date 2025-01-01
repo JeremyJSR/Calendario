@@ -1,0 +1,205 @@
+/* Estilos básicos para todo */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color: lightslategray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 600;
+}
+
+.registro{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 270px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.registro div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.registro input{
+    border: none;
+    border-radius: 5px;
+}
+.registro button{
+    background-color: rgb(145, 228, 20);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 600;
+    
+}
+.registro button:hover{
+    background-color: rgb(101, 150, 28);
+}
+
+/* Estilo para el contenedor del calendario */
+.calendario-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para cada mes */
+.mes {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Estilo para el título del mes */
+.mes h3 {
+    background-color: lightslategray;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+/* Estilo para la lista de días */
+.mes ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Estilo para cada día */
+.mes li {
+    flex: 1 0 14.28%; /* Aproximadamente 7 días por semana */
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    position: relative;
+}
+
+/* Estilo para los días con eventos */
+.mes li.evento {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Estilo para el contenido del evento */
+.mes li.evento p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Estilo para el botón de eliminar */
+.mes li.evento button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    padding: 3px 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+/* Estilo para el botón de eliminar en hover */
+.mes li.evento button:hover {
+    background-color: #c0392b;
+}
+
+
+/* Estilo general para el contenedor de la sección de administrador */
+.admin-section {
+    width: 90%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
+}
+
+/* Título de la sección */
+.admin-section h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los campos del formulario */
+.admin-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.admin-section input[type="text"],
+.admin-section input[type="date"],
+.admin-section input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+.admin-section .medio{
+    width: 50%;
+}
+
+.admin-section button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.admin-section button:hover {
+    background-color: #218838;
+}
+
+/* Botón de eliminar evento */
+.mes li.evento button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    padding: 3px 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.mes li.evento button:hover {
+    background-color: #c82333;
+}
